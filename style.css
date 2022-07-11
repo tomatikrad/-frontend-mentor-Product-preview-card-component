@@ -1,0 +1,200 @@
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("./fonts/fraunces-v22-latin-700.woff2") format("woff2"),
+    url("./fonts/fraunces-v22-latin-700.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("./fonts/montserrat-v24-latin-500.woff2") format("woff2"),
+    url("./fonts/montserrat-v24-latin-500.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("./fonts/montserrat-v24-latin-700.woff2") format("woff2"),
+    url("./fonts/montserrat-v24-latin-700.woff") format("woff");
+}
+
+:root {
+  --clr-primary-cyan: hsl(158 36% 37%);
+  --clr-primary-dark-cyan: hsl(156 42% 18%);
+  --clr-primary-cream: hsl(30 38% 92%);
+
+  --clr-neutral-dark: hsl(212 21% 14%);
+  --clr-neutral-grayish: hsl(228 12% 48%);
+  --clr-neutral-white: hsl(0 0% 100%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--clr-primary-cream);
+}
+
+main {
+  min-height: calc(100vh - 16.5px);
+  font-size: 0.875rem;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  padding: 2%;
+}
+
+.card {
+  background-color: var(--clr-neutral-white);
+  width: 341px;
+  max-width: 90%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.card__content {
+  padding: 6%;
+}
+
+.card__under-title {
+  color: var(--clr-neutral-grayish);
+  text-transform: uppercase;
+  letter-spacing: 0.27rem;
+  font-weight: 500;
+  font-size: 0.8125rem;
+}
+
+.card__title {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: -1.3px;
+  line-height: 1;
+  width: 12ch;
+  padding-top: 0.7rem;
+  padding-bottom: 0.9rem;
+}
+
+.card__description {
+  font-size: 0.8125rem;
+  line-height: 1.9;
+  color: var(--clr-neutral-grayish);
+  margin-bottom: 2.4rem;
+}
+
+.price-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  color: var(--clr-primary-cyan);
+}
+.sale {
+  color: var(--clr-neutral-grayish);
+  margin-left: 1.4rem;
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-neutral-white);
+  background-color: var(--clr-primary-cyan);
+  border: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  font-weight: 700;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+.button img {
+  display: inline;
+  margin-right: 0.7rem;
+}
+.button:hover {
+  background-color: var(--clr-primary-dark-cyan);
+}
+
+@media (min-width: 50rem) {
+  .card {
+    display: flex;
+    width: 600px;
+  }
+
+  .img-mobile {
+    width: 50%;
+    flex: 0 0 50%;
+  }
+  .card__content {
+    flex: 0 0 50%;
+  }
+
+  .card__title {
+    width: auto;
+  }
+}
